@@ -9,7 +9,7 @@
 
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageChild"
         android:layout_width="104dp"
         android:layout_height="99dp"
         android:layout_alignParentStart="true"

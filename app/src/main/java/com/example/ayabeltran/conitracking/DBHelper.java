@@ -39,6 +39,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String C_AGE_COL5 = "childage";
     public static final String C_BIRTHDAY_COL6 = "childbday";
     public static final String C_GENDER_COL7 = "childgender";
+    public static final String C_PHOTO_COL8 = "childphonto";
 
     //Table Device Columns
 
@@ -82,7 +83,8 @@ public class DBHelper extends SQLiteOpenHelper {
                 +C_MIDDLENAME_COL4+" text, "
                 +C_AGE_COL5+" text, "
                 +C_BIRTHDAY_COL6+" text, "
-                +C_GENDER_COL7+" text);");
+                +C_GENDER_COL7+" text, "
+                +C_PHOTO_COL8+");");
 
         Log.e("Table Operations :", "Child Detail Created");
 
@@ -111,7 +113,7 @@ public class DBHelper extends SQLiteOpenHelper {
         Log.e("Table Operations :", "Dropped Existing Tables");
     }
 
-    //Insert
+    //Insert --> Guardian Registration
 
     public boolean addguardian(String lastname, String firstname, String midname, String age, String bday, String gender, String contactno, String email, String uname, String pass) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -134,6 +136,26 @@ public class DBHelper extends SQLiteOpenHelper {
             return true;
 
 
+    }
+
+    //Insert --> Child Registration
+
+    public boolean addchild(String clname, String cfname, String cmname, String cage, String cbday, String cgender, byte[]   cphoto) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(C_LASTNAME_COL2, clname);
+        contentValues.put(C_FIRSTNAME_COL3, cfname);
+        contentValues.put(C_MIDDLENAME_COL4, cmname);
+        contentValues.put(C_AGE_COL5, cage);
+        contentValues.put(C_BIRTHDAY_COL6, cbday);
+        contentValues.put(C_GENDER_COL7, cgender);
+        contentValues.put(C_PHOTO_COL8, cphoto);
+        Log.e("Table Operations : ", "Inserted One Child-Device User");
+        long result = db.insert(childDetailModel, null, contentValues);
+        if (result == -1)
+            return false;
+        else
+            return true;
     }
 
 
