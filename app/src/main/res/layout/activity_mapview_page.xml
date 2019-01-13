@@ -35,14 +35,23 @@
 
             <fragment xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:tools="http://schemas.android.com/tools"
-                tools:context=".MapsActivity"
+                tools:context=".MapviewPage"
                 android:name="com.google.android.gms.maps.SupportMapFragment"
                 android:id="@+id/mapview"
                 android:layout_width="match_parent"
                 android:layout_height="350dp"/>
 
 
+            <view class="android.support.v7.app.AlertController$RecycleListView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical"
+                android:visibility="visible">
+
+            </view>
         </LinearLayout>
+
+
 
     </ScrollView>
 
