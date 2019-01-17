@@ -10,9 +10,7 @@ import android.widget.TextView;
 public class ChildListDisplay extends AppCompatActivity {
 
     ImageView imgchild;
-    TextView txtcname, txtclocation,
-        txtbattstatus;
-
+    TextView txtcname;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,19 +18,19 @@ public class ChildListDisplay extends AppCompatActivity {
 
         imgchild = findViewById(R.id.imageChild);
         txtcname = findViewById(R.id.txtChildName);
-        txtclocation = findViewById(R.id.txtCurrentLoc);
-        txtbattstatus = findViewById(R.id.txtBattStatus);
+//        txtclocation = findViewById(R.id.txtCurrentLoc);
+//        txtbattstatus = findViewById(R.id.txtBattStatus);
 
         Bundle extra = getIntent().getExtras();
         String KeyName = extra.getString("KeyName");
-        String KeyLoc = extra.getString("KeyLoc");
-        String KeyBatt = extra.getString("KeyBatt");
+//        String KeyLoc = extra.getString("KeyLoc");
+//        String KeyBatt = extra.getString("KeyBatt");
         byte[] KeyImg = extra.getByteArray("KeyImg");
 
 
         txtcname.setText(KeyName);
-        txtclocation.setText(KeyLoc);
-        txtbattstatus.setText(KeyBatt);
+//        txtclocation.setText(KeyLoc);
+//        txtbattstatus.setText(KeyBatt);
         Bitmap bm = BitmapFactory.decodeByteArray(KeyImg, 0, KeyImg.length);
         imgchild.setImageBitmap(bm);
     }
