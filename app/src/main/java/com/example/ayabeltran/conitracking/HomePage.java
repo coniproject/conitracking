@@ -33,6 +33,7 @@ public class HomePage extends AppCompatActivity {
 
                 Intent toRegistration = new Intent(HomePage.this, GuardianRegistration.class);
                 startActivity(toRegistration);
+
             }
         });
     }

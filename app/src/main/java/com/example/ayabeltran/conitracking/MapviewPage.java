@@ -193,7 +193,7 @@ public class MapviewPage extends AppCompatActivity {
                             Log.d(TAG,"getDeviceLocation: Location Found");
                             Location currentLocation = (Location) task.getResult();
 
-                            moveCamera(new LatLng(currentLocation.getLatitude(),currentLocation.getLongitude()), DEFAULT_ZOOM);
+//                            moveCamera(new LatLng(currentLocation.getLatitude(),currentLocation.getLongitude()), DEFAULT_ZOOM);
                         }
                         else {
                             Log.d(TAG,"No Location Found. Please allow location services.");
